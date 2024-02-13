@@ -1,0 +1,26 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8" mode="side" opened>
+    <!-- Contenido del menú lateral -->
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content mat-elevation-z8">
+    <div class="scroll-container">
+      <ng-container *ngFor="let page of paginatedFincas">
+        <div class="card-container">
+          <mat-card *ngFor="let finca of page" class="fincas-card" [ngClass]="{ 'clase-elegante': finca.claseNombre, 'clase-normal': finca.claseDescripcion }">
+            <img mat-card-image [src]="finca.imagen" alt="{{ finca.nombre }}" style="max-width: 100%; max-height: 100%;">
+            <mat-card-content>
+              <h3 [ngClass]="{ 'clase-elegante': finca.claseNombre, 'clase-normal': finca.claseDescripcion }">{{ finca.nombre }}</h3>
+              <p class="descripcion-fincas">{{ finca.descripcion }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button class="card-actions-button"(click)="alquilarFinca(finca)">Reserva</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </ng-container>
+      <mat-paginator [pageSize]="pageSize" [length]="fincas.length" (page)="onPageChange($event)">
+      </mat-paginator>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

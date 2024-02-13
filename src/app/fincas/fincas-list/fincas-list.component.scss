@@ -1,0 +1,73 @@
+mat-sidenav-container{
+  height: calc(100vh - 65px);
+  
+}
+mat-toolbar{
+  background: #102d41;
+  color: aliceblue;
+}
+.content{
+   height: calc(100vh - 98px);
+   border-radius: 10px;
+   margin: 16px;
+   margin-left: 32px;
+   display: flex;
+   font-size: 2rem;
+   color: rgb(7, 2, 2);
+   
+
+}
+
+.example-container {
+  
+  display: flex;
+  height: calc(100vh - 65px);
+  overflow: hidden;
+}
+.card-actions-button {
+  background: linear-gradient(to right, #3d2d2d, #304e85, #4c4c8f) !important;
+  color: #0c0911 !important;
+  font-size: 1rem !important;
+}
+
+
+.card-container {
+  background: linear-gradient(to right, #533453, #31425f, #25255f);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.fincas-card {
+  width: calc(30% - 16px);
+  margin-bottom: 16px;
+}
+
+.descripcion-fincas {
+  font-size: 14px; 
+}
+
+.mat-paginator {
+  margin-top: 16px;
+  justify-content: center;
+}
+
+
+.fincas-card h3 {
+  font-family: 'Tu-Fuente-Elegante', sans-serif; 
+  font-weight: bold;
+  color: #333; 
+  
+}
+
+
+.fincas-card .descripcion-fincas {
+  font-family: 'Otra-Fuente', sans-serif; 
+  color: #666; 
+  
+}
+
+

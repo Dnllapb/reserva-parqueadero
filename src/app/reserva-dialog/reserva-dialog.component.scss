@@ -1,0 +1,23 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  margin-top: 16px;
+}
+button:disabled {
+    opacity: 0.5; 
+    cursor: not-allowed;
+  }

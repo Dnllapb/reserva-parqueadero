@@ -1,0 +1,12 @@
+<div *ngIf="!hayReservaciones; else listaReservaciones">
+  <p>No tienes reservas creadas aún.</p>
+</div>
+
+<ng-template #listaReservaciones>
+  <p>Tienes una reservación:</p>
+  <ul>
+    <li>Nombre del Cliente: {{ reserva?.nombre }}</li>
+    <li>Número de Celular: {{ reserva?.celular }}</li>
+    <li>Fecha de Reserva: {{ reserva?.fecha }}</li>
+  </ul>
+</ng-template>

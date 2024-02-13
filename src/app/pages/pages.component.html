@@ -1,0 +1,50 @@
+<mat-toolbar >
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'"(click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened"> 
+       menu
+      </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+       close
+      </mat-icon>
+       </button>
+    <span>Reserva de fincas</span>
+  </mat-toolbar>
+
+
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav="matSidenav" class=" mat-elevation-z8" mode="side" opened>
+      <img class="avatar mat-elevation-z8" src="https://image.freepik.com/vetores-gratis/modelo-de-logotipo-elegante-dourado_23-2148219501.jpg" alt="">
+      <h4 class="name">Andres Cely</h4>
+      <p class="desingnation">Hola putos</p>
+
+        <mat-divider></mat-divider>
+        <button mat-button class="menu-button">
+          <mat-icon>person</mat-icon>
+          <span><a [routerLink]="['fincas/fincaEdit']" >Nosotros</a></span>
+        </button>
+        <button mat-button class="menu-button">
+          <mat-icon>home</mat-icon>
+          <span> <a [routerLink]="['fincas/fincas']" > Fincas</a> </span>
+        </button>
+        <button mat-button class="menu-button">
+          <mat-icon>person</mat-icon>
+          <span><a [routerLink]="['fincas/fincaDetails/id']" > Tu Reservas</a></span>
+        </button>
+        <button mat-button class="menu-button">
+          <mat-icon>person</mat-icon>
+          <span><a [routerLink]="['fincas/fincaCreate']" >Comentarios</a></span>
+        </button>
+        
+        <mat-divider></mat-divider>
+        <button mat-button class="menu-button" (click)="logout()">
+          <mat-icon>logout</mat-icon>
+          <span>Salir</span>
+        </button>
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+      <div class="content mat-elevation-z8">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
