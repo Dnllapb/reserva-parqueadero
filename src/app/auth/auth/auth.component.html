@@ -1,36 +1,18 @@
-<mat-sidenav-container class="example-container">
-  <mat-sidenav-content class="content mat-elevation-z8">
-    <div class="logo-container">
-      <img
-        class="avatar logo mat-elevation-z8"
-        src="https://image.freepik.com/free-vector/elegant-ornamental-logo_52683-26633.jpg"
-      />
-      <div class="mat-2">
-        <mat-form-field>
-          <mat-label>example@gmail.com</mat-label>
-          <input matInput type="email" id="contrasena" class="form-control" />
-        </mat-form-field>
-      </div>
-      <div class="mat-2">
-        <mat-form-field>
-          <mat-label>Contraseña</mat-label>
-          <input
-            matInput
-            type="password"
-            id="contrasena"
-            class="form-control"
-            formControlName="contrasena"
-            required
-          />
-        </mat-form-field>
-      </div>
-      <div class="mat-3">
-        <div fxLayout="row" fxLayoutAlign="center">
-          <button mat-raised-button class="login-button" (click)="login()">
-            Login
-          </button>
-        </div>
-      </div>
+
+	
+	<div class="login-page">
+    <div class="form">
+      <form  (ngSubmit)="sendLogin()" [formGroup]="formLogin"   class="login-form">
+        <input formControlName="email" type="text" placeholder="Ingresa tu correo"/>
+        <input formControlName="password"type="password" placeholder="Ingresa tu constraseña"/>
+        <button [disabled]="formLogin.valid"> Iniciar sesión</button>
+        <p class="mesage"> Registrate <a href="#">aquí</a></p>
+      </form>
     </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    <div *ngIf="errorSession">
+          Ocurrio un error con tu email o password
+    </div>
+    <div>
+      <hr>Valido{{formLogin.valid}}
+    </div>
+  </div>
