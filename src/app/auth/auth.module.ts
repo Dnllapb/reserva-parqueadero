@@ -7,12 +7,13 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterUserComponent } from './register-user/register-user.component';
 
 
 
 @NgModule({
-  declarations: [AuthComponent],
+  declarations: [AuthComponent, RegisterUserComponent],
   imports: [
     CommonModule,
     MatInputModule,
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSidenavModule,
     MatDividerModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
 
   ],
 })

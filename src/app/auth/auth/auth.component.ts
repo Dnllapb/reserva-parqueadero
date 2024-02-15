@@ -37,29 +37,20 @@ export class AuthComponent implements OnInit{
       
       
     }
-sendLogin(): void{
-  const {email,password} = this.formLogin.value
-  this.authService.sendCredential(email,password)
-  .subscribe(
-   responseOk=>{
-   
-      const{tokenSession}=responseOk
-      this.cookie.set('token',tokenSession,1,'/')
-      if(!this.errorSession)
-      {
-        this.router.navigate(['/fincas']);
-      }
-      console.log('sesion iniciada correctamente',responseOk);
-
-    },
-    error=>{
-      this.errorSession = true
-      console.log('ocurrio un error en tu email y/o tu password');
-     
+    sendLogin(): void {
+      const { email, password } = this.formLogin.value;
+      this.authService.sendCredential(email, password).subscribe({
+        next: (responseOk: any) => {
+          const { tokenSession } = responseOk;
+          this.cookie.set('token', tokenSession, 1, '/');
+        
+          console.log('Sesión iniciada correctamente', responseOk);
+        },
+        error: (error) => {
+          this.errorSession = true;
+          console.error('Ocurrió un error en tu email y/o tu password', error);
+        }
+      });
     }
-  )
-
-}
-
   
 }

@@ -14,8 +14,10 @@ import { BoldInfoDirective } from './bold-info.directive';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
  import { ReservationsService } from './services/reservation.service';
 import { FincasService } from './fincas/fincas.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { InjectSessionInterceptor } from './core/interceptors/inject-session.interceptor';
+import { ListaComponent } from './auth/register-user/lista/lista.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { CookieService } from 'ngx-cookie-service';
     ReservaDialogComponent,
     ReservaDialogComponent,
     BoldInfoDirective,
+    ListaComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,16 @@ import { CookieService } from 'ngx-cookie-service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ReservationsService, FincasService,CookieService],
+  providers: [ReservationsService, FincasService,CookieService,
+    {
+        provide:HTTP_INTERCEPTORS,
+        useClass:InjectSessionInterceptor,
+        multi:true
+
+    }
+      
+    
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand sm bg-dark navbar-dark ">
+    <ul class="navbar-nav">
+      <li class="navabar-item">
+      <a routerLink="/listas"routerLinkActive="active" class="nav-link">Lista de Empleados</a>
+    </li>
+    <li class="navabar-item">
+      <a routerLink="/Registrar" routerLinkActive="active" class="nav-link">Registrar Usuario</a>
+    </li>
+    </ul>
+    
+  </nav>
+  <h1>Lista de usuarios</h1>
+  <div class="container">
+  <table class=" table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Correo</th>
+
+    </tr>
+  </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <td>{{usuario.id}}</td>
+        <td>{{usuario.name}}</td>
+        <td>{{usuario.email}}</td>
+        <td>
+      </td>
+      </tr>
+    </tbody>
+    
+    </table>
+  </div>
+
+
