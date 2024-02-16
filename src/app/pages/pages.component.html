@@ -1,31 +1,71 @@
-<mat-toolbar >
-    <button mat-icon-button *ngIf="sidenav.mode === 'over'"(click)="sidenav.toggle()">
-      <mat-icon *ngIf="!sidenav.opened"> 
-       menu
-      </mat-icon>
-    <mat-icon *ngIf="sidenav.opened">
-       close
-      </mat-icon>
-       </button>
-    <span>Reserva tu cupo</span>
-  </mat-toolbar>
-
-  <nav class="example-container sidenav">
-    <ul class="mat-elevation-z8" mode="side" opened>
+<mat-sidenav #sidenav>
+  <div class="top-section">
+    <div class="logo-container">
       <img class="avatar" src="../../assets/img/parknow.png" alt="">
-      <mat-divider></mat-divider>
-      <li class="menu-button">
+      <span>Reserva tu cupo</span>
+    </div>
+    <ul class="menu-items">
+      <li>
         <a mat-button [routerLink]="['fincas/fincaDetails/id']">Historial Reservas</a>
       </li>
-      <mat-divider></mat-divider>
-      <li class="menu-button" (click)="logout()">
-        <a mat-button><mat-icon>logout</mat-icon>Salir</a>
+      <li>
+        <a mat-button (click)="logout()"><mat-icon>logout</mat-icon>Salir</a>
       </li>
     </ul>
-  
-    <mat-sidenav-content>
-      <div class="content mat-elevation-z8">
-        <router-outlet></router-outlet>
+  </div>
+  <div class="content mat-elevation-z8">
+    <div class="left-container">
+      <!-- Contenido del contenedor izquierdo -->
+      <div class="form-container">
+        <!-- Formulario con título -->
+        <div class="form-title">Reserva Aquí</div>
+
+        <!-- Texto descriptivo -->
+        <p>Ingrese los detalles de su reserva:</p>
+
+        <!-- Campo de fecha y hora de ingreso -->
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha y hora de ingreso</mat-label>
+          <input matInput [matDatepicker]="picker1" placeholder="Seleccione una fecha y hora">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <!-- Campo de fecha y hora de salida -->
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha y hora de salida</mat-label>
+          <input matInput [matDatepicker]="picker2" placeholder="Seleccione una fecha y hora">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+
+        <!-- Campo de tipo de vehículo -->
+        <mat-form-field appearance="fill">
+          <mat-label>Tipo de vehículo</mat-label>
+          <mat-select>
+            <mat-option value="auto">Auto</mat-option>
+            <mat-option value="moto">Moto</mat-option>
+            <mat-option value="bicicleta">Bicicleta</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- Campo de placa -->
+        <mat-form-field appearance="fill">
+          <mat-label>Placa</mat-label>
+          <input matInput>
+        </mat-form-field>
+
+        <!-- Botón de reservar -->
+        <button mat-raised-button color="primary">Reservar</button>
       </div>
-    </mat-sidenav-content>
-  </nav>
+    </div>
+
+    <div class="right-container">
+      <!-- Contenido del contenedor derecho -->
+      <!-- Imagen -->
+      <div class="image-container">
+        <img src="https://aprendelibvrefiles.blob.core.windows.net/aprendelibvre-container/course/creacion_de_sitios_web/image/imgscursoweb-01_xl.png" alt="Imagen">
+      </div>
+    </div>
+  </div>
+</mat-sidenav>

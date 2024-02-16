@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-fincas-create',
   templateUrl: './fincas-create.component.html',
   styleUrls: ['./fincas-create.component.scss'],
 })
-export class FincasCreateComponent {
-  fincaForm: FormGroup;
+export class FincasCreateComponent implements OnInit {
+  @ViewChild('sidenav') sidenav!: MatSidenav;
+  fincaForm: any;
 
   constructor(private fb: FormBuilder) {
     this.fincaForm = this.fb.group({
@@ -16,6 +18,9 @@ export class FincasCreateComponent {
       descripcion: ['', [Validators.required]],
       
     });
+  }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 
   onSubmit() {

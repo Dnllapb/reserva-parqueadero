@@ -1,75 +1,82 @@
-.example-spacere {
-  flex: 11 1 auto;
+.example-container {
+  display: flex;
+  height: 100vh;
 }
 
-mat-toolbar{
-  background: linear-gradient(to right, #181218, #2a3342, #1a1a2e);
-  color: aliceblue;
+.sidenav {
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
 }
 
-mat-sidenav-container{
-  height: calc(100vh - 65px);
-  
+.top-section {
+  margin-bottom: 20px;
 }
-mat-sidenav{
-  margin: 8px;
-  width: 200px;
-  border-right: none;
-  background: linear-gradient(to right, #181218, #2a3342, #1a1a2e);
-  color: aliceblue;
-  border-radius: 10px;
-  padding: 16px;
-  text-align: center;
 
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
 .avatar {
-  margin-top: 16px;
-  width: 100px;
-  height: 100px;
+  width: 50px;
   border-radius: 50%;
+  margin-right: 10px;
 }
 
-.name{
-  margin-top: 16px;
-  font-weight: normal;
-
-}
-.desingnation{
-  margin-top: 2px;
-  font-size: 0.7rem;
-  color: lightgray;
-
-}
-.menu-button{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: 1rem;
-  mat.icon, span, a {
-    margin-right: 8px;
-    color: rgb(194, 241, 241);
-  }
-}
-.content{
-   height: calc(100vh - 98px);
-   border-radius: 10px;
-   margin: 16px;
-   margin-left: 32px;
-   display: flex;
-   font-size: 2rem;
-   color: lightgray;
-
+.menu-items {
+  list-style-type: none;
+  padding-left: 0;
 }
 
-mat-divider{
-  margin-top: 16px;
-  margin-bottom: 16px;
-  background-color: white;
-
-}
-mat-sidenav-content{
-  height: calc(100vh - 65px);
+.menu-items li {
+  margin-bottom: 10px;
 }
 
+.mat-icon-button {
+  color: #fff;
+}
+
+////////////////////////////////////////////////////////
+
+.form-container {
+  background-color: yellow; /* Fondo amarillo */
+  padding: 20px; /* Espacio interno */
+}
+
+.form-title {
+  font-size: 20px; /* Tamaño del título */
+  font-weight: bold; /* Negrita */
+}
+
+.avatar {
+  width: 50px; /* Tamaño del avatar */
+  height: 50px;
+}
+.content {
+  display: flex; /* Convertir el contenedor en flexbox */
+}
+
+.left-container,
+.right-container {
+  flex: 1; /* Hacer que ambos contenedores tengan el mismo tamaño */
+  padding: 20px; /* Añadir un espacio interno */
+  border-radius: 10px; /* Añadir bordes redondeados */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Añadir sombra */
+  margin: 10px; /* Añadir margen entre los contenedores */
+}
+
+.left-container {
+  background-color: yellow; /* Fondo amarillo */
+}
+
+.image-container {
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Añadir bordes redondeados a la imagen */
+}

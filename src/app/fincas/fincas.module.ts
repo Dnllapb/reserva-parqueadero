@@ -10,6 +10,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {  MatIconModule } from '@angular/material/icon';
+import { MatFormField, MatFormFieldModule, } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -18,6 +21,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     FincasListComponent,
     FincasDetailsComponent,
     FincasEditComponent,
+    FincasCreateComponent
   ],
   imports: [
     CommonModule,
@@ -27,6 +31,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatPaginatorModule,
     MatSidenavModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
+    MatIconModule,
+    MatFormFieldModule
   ],
 })
 export class FincasModule {}

@@ -9,6 +9,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import {  MatCardModule } from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -23,6 +27,12 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatDividerModule,
     MatButtonModule,
     MatDatepickerModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatNativeDateModule
+    
   ],
 })
 export class PagesModule {}

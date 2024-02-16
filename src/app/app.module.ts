@@ -18,12 +18,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InjectSessionInterceptor } from './core/interceptors/inject-session.interceptor';
+import { MatSidenavModule } from '@angular/material/sidenav';
 @NgModule({
   declarations: [
     AppComponent,
     ReservaDialogComponent,
     ReservaDialogComponent,
     BoldInfoDirective,
+    
 
   ],
   imports: [
@@ -38,6 +40,7 @@ import { InjectSessionInterceptor } from './core/interceptors/inject-session.int
     MatSnackBarModule,
     HttpClientModule,
     FormsModule,
+    MatSidenavModule
   ],
   providers: [
     ReservationsService,

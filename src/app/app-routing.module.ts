@@ -7,6 +7,7 @@ import { SessionGuard } from './core/guards/session.guard';
 import { RegisterUserComponent } from './auth/register-user/register-user.component';
 import { ListaComponent } from './auth/register-user/lista/lista.component';
 import { EditComponent } from './register-user/edit/edit.component';
+import { FincasCreateComponent } from './fincas/fincas-create/fincas-create.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
     },
   ],
 },
+{path:'reservaNueva',component:FincasCreateComponent},
 
 ];
 
