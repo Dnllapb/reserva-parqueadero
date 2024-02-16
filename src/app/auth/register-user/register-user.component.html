@@ -1,21 +1,17 @@
-<div class="col-md-6 offset-md-3">
-    <h3 class="text-center">Registro de empleados</h3>
-    <form (ngSubmit)=" onSubmit()">
-    <div class="form-group">
-    <label>Nombre :</label>
-    <input type="text" class="form-control" id="nombre" [(ngModel)]="usuario.name" name="nombre">
-    </div>
-    <div class="form-group">
-        <label>Apellido :</label>
-        <input type="text" class="form-control" id="Apellido" [(ngModel)]="usuario.email" name="Apellido">
-        </div>
-        <div class="form-group">
-            <label>Telefono :</label>
-            <input type="text" class="form-control" id="Telefono" [(ngModel)]="usuario.password" name="Telefono">
-            </div>
 
-               
-      <button class="btn btn bg-success">Guardar</button>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Nombre :</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="usuario.name" name="name">
+      </div>
+      <div class="form-group">
+        <label>Apellido :</label>
+        <input type="text" class="form-control" id="Apellido" [(ngModel)]="usuario.email" name="email">
+      </div>
+      <div class="form-group">
+        <label>Telefono :</label>
+        <input type="text" class="form-control" id="Telefono" [(ngModel)]="usuario.password" name="password">
+      </div>
+      <button class="btn bg-success">Guardar</button>
     </form>
-    </div>
-    
+

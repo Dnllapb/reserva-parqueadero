@@ -6,7 +6,7 @@
         <input formControlName="email" type="text" placeholder="Ingresa tu correo"/>
         <input formControlName="password"type="password" placeholder="Ingresa tu constraseña"/>
         <button [disabled]="formLogin.valid"> Iniciar sesión</button>
-        <p class="mesage"> Registrate <a href="#">aquí</a></p>
+        <p class="message"> <a [routerLink]="['/registrar']">Regístrate aquí</a></p>
       </form>
     </div>
     <div *ngIf="errorSession">

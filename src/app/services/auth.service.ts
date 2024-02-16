@@ -19,7 +19,7 @@ export class AuthService {
     .pipe(
       tap((responseOK:string) => {
           this.cookies.set('token_service', responseOK,  1, '/')  
-          this.router.navigate(['/fincas']);       
+          this.router.navigate(['dashboard/fincas/fincaEdit']);       
       })
       )
   }

@@ -1,3 +1,4 @@
+
 mat-sidenav-container{
   height: calc(100vh - 65px);
   
@@ -25,14 +26,14 @@ mat-toolbar{
   overflow: hidden;
 }
 .card-actions-button {
-  background: linear-gradient(to right, #3d2d2d, #304e85, #4c4c8f) !important;
+  background: linear-gradient(to right,#49b675bb, #668070, #88978d) !important;
   color: #0c0911 !important;
   font-size: 1rem !important;
 }
 
 
 .card-container {
-  background: linear-gradient(to right, #533453, #31425f, #25255f);
+  background: linear-gradient(to right, #49b675bb, #466051, #303632);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -69,5 +70,3 @@ mat-toolbar{
   color: #666; 
   
 }
-
-

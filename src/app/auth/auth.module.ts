@@ -9,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterUserComponent } from './register-user/register-user.component';
-
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -23,7 +23,9 @@ import { RegisterUserComponent } from './register-user/register-user.component';
     MatDividerModule,
     MatButtonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,  
+    RouterModule,
+
 
   ],
 })

@@ -4,9 +4,9 @@ import { AuthComponent } from './auth/auth/auth.component';
 import { PagesComponent } from './pages/pages.component';
 import { FincasEditComponent } from './fincas/fincas-edit/fincas-edit.component';
 import { SessionGuard } from './core/guards/session.guard';
-import { SequenceError } from 'rxjs';
 import { RegisterUserComponent } from './auth/register-user/register-user.component';
 import { ListaComponent } from './auth/register-user/lista/lista.component';
+import { EditComponent } from './register-user/edit/edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -14,7 +14,15 @@ const routes: Routes = [
   { path: 'nosotros', component: FincasEditComponent },
   {path: 'fincas',component:FincasEditComponent,canActivate:[SessionGuard]},
   {path:'registrar',component:RegisterUserComponent},
-  {path:'listas',component:ListaComponent}   
+  {path:'listas',component:ListaComponent},
+  {path:'Actualizar/:id',component:EditComponent},
+  {path: 'dashboard',component: PagesComponent,children: [
+    {
+      path: 'fincas',loadChildren: () =>import('./fincas/fincas.module').then((m) => m.FincasModule),
+    },
+  ],
+},
+
 ];
 
 @NgModule({
