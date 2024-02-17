@@ -2,7 +2,6 @@
   <div class="top-section">
     <div class="logo-container">
       <img class="avatar" src="../../assets/img/parknow.png" alt="">
-      <span>Reserva tu cupo</span>
     </div>
     <ul class="menu-items">
       <li>
@@ -21,20 +20,20 @@
         <div class="form-title">Reserva Aquí</div>
 
         <!-- Texto descriptivo -->
-        <p>Ingrese los detalles de su reserva:</p>
+        <p>Ingrese los detalles de tu reserva:</p>
 
         <!-- Campo de fecha y hora de ingreso -->
         <mat-form-field appearance="fill">
-          <mat-label>Fecha y hora de ingreso</mat-label>
-          <input matInput [matDatepicker]="picker1" placeholder="Seleccione una fecha y hora">
+          <mat-label>Fecha de ingreso</mat-label>
+          <input matInput [matDatepicker]="picker1" placeholder="Seleccione una fecha" formControlName="dateInit">
           <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
 
         <!-- Campo de fecha y hora de salida -->
         <mat-form-field appearance="fill">
-          <mat-label>Fecha y hora de salida</mat-label>
-          <input matInput [matDatepicker]="picker2" placeholder="Seleccione una fecha y hora">
+          <mat-label>Fecha de salida</mat-label>
+          <input matInput [matDatepicker]="picker2" placeholder="Seleccione una fecha " formControlName="dateFinal">
           <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
           <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
@@ -42,8 +41,8 @@
         <!-- Campo de tipo de vehículo -->
         <mat-form-field appearance="fill">
           <mat-label>Tipo de vehículo</mat-label>
-          <mat-select>
-            <mat-option value="auto">Auto</mat-option>
+          <mat-select formControlName="typeVehicle">
+            <mat-option value="auto">Auto</mat-option >
             <mat-option value="moto">Moto</mat-option>
             <mat-option value="bicicleta">Bicicleta</mat-option>
           </mat-select>
@@ -51,14 +50,17 @@
 
         <!-- Campo de placa -->
         <mat-form-field appearance="fill">
-          <mat-label>Placa</mat-label>
-          <input matInput>
+          <mat-label >Placa</mat-label>
+          <input matInput formControlName="plate">
         </mat-form-field>
 
         <!-- Botón de reservar -->
         <button mat-raised-button color="primary">Reservar</button>
+        <button mat-raised-button color="primary">Cancelar</button>
       </div>
     </div>
+
+
 
     <div class="right-container">
       <!-- Contenido del contenedor derecho -->

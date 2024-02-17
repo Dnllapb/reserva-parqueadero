@@ -1,0 +1,81 @@
+.example-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidenav {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .top-section {
+    margin-bottom: 20px;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .avatar {
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .menu-items {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .menu-items li {
+    margin-bottom: 10px;
+  }
+  
+  .mat-icon-button {
+    color: #fff;
+  }
+  
+  ////////////////////////////////////////////////////////
+  
+  .form-container {
+    background-color: yellow; /* Fondo amarillo */
+    padding: 20px; /* Espacio interno */
+  }
+  
+  .form-title {
+    font-size: 20px; /* Tamaño del título */
+    font-weight: bold; /* Negrita */
+  }
+  
+
+  .content {
+    display: flex; /* Convertir el contenedor en flexbox */
+  }
+  
+  .left-container,
+  .right-container {
+    flex: 1; /* Hacer que ambos contenedores tengan el mismo tamaño */
+    padding: 20px; /* Añadir un espacio interno */
+    border-radius: 10px; /* Añadir bordes redondeados */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Añadir sombra */
+    margin: 10px; /* Añadir margen entre los contenedores */
+  }
+  
+  .left-container {
+    display: flex;
+    justify-content: center;
+    background-color: yellow; /* Fondo amarillo */
+  }
+  
+  .form-container {
+    width: 300px; /* Ajusta el ancho según tus necesidades */
+  }
+  
+  /* Estilo para cada campo */
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 15px; /* Espacio entre cada campo */
+  }
