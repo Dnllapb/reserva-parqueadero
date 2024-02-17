@@ -20,9 +20,10 @@ export class PagesComponent implements OnInit {
     private router: Router
   ) {
     this.fincaForm = this.fb.group({
-      nombre: ['', [Validators.required]],
-      imagen: ['', [Validators.required]],
-      descripcion: ['', [Validators.required]]
+      dateInit: ['', [Validators.required]],
+      dateFinal: ['', [Validators.required]],
+      typeVehicle: ['', [Validators.required]],
+      plate: ['', [Validators.required]],
     });
   }
 

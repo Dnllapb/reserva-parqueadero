@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'login', component: AuthComponent },
   { path: 'nosotros', component: FincasEditComponent },
   {path: 'fincas',component:FincasEditComponent,canActivate:[SessionGuard]},
-  {path:'registrar',component:RegisterUserComponent},
+  {path:'registrarUsuario',component:RegisterUserComponent},
   {path:'listas',component:ListaComponent},
   {path:'Actualizar/:id',component:EditComponent},
   {path: 'dashboard',component: PagesComponent,children: [

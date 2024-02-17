@@ -1,40 +1,46 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/Usuario/usuario';
 import { UsuariosService } from 'src/app/service/ServicioUser/usuarios.service';
 
 @Component({
-  selector: 'app-register-user',
+  selector: 'app-registrar-usuario',
   templateUrl: './register-user.component.html',
   styleUrls: ['./register-user.component.scss']
 })
 export class RegisterUserComponent implements OnInit {
+  formulario: FormGroup;
 
-
-  usuario : Usuario = new Usuario();
-
-  constructor(private usuarioService:UsuariosService, private router:Router){}
-
+  constructor(
+    private formBuilder: FormBuilder,
+    private  usuarioService: UsuariosService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    console.log(this.usuario);
-  
- 
-  }
-  
-  guardarUsuario(){
-    this.usuarioService.registrarUsuario(this.usuario).subscribe(dato=>{
-      console.log(dato)
-     this.guardarUsuario();
-    },error=>console.log(error));
-    
-  
+    this.formulario = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+
+    });
   }
 
+  guardarUsuario() {
+    if (this.formulario.valid) {
+      const usuario = this.formulario.value;
+      this.usuarioService.registrarUsuario(usuario).subscribe(
+        dato => {
+          console.log(dato);
+          this.irAlaListaDeEmpleados();
+        },
+        error => console.log(error)
+      );
+    }
+  }
 
-        
-  onSubmit(){
-    this.guardarUsuario();
-    
+  irAlaListaDeEmpleados() {
+    this.router.navigate(['usuarios']);
   }
 }

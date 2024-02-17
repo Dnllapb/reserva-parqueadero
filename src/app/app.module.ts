@@ -19,12 +19,14 @@ import { CookieService } from 'ngx-cookie-service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InjectSessionInterceptor } from './core/interceptors/inject-session.interceptor';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { EditComponent } from './register-user/edit/edit.component';
 @NgModule({
   declarations: [
     AppComponent,
     ReservaDialogComponent,
     ReservaDialogComponent,
     BoldInfoDirective,
+    EditComponent
     
 
   ],
