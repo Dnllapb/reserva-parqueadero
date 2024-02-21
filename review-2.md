@@ -1,0 +1,3 @@
+sistema de reservas diseñado específicamente para parqueaderos que permite a los usuarios ver los espacios disponibles, seleccionar las fechas y horarios deseados, y confirmar su reserva de manera rápida y sencilla.
+ Se ha implementado funcionalidades clave como el inicio de sesión con JWT y el registro de usuarios. Estas funciones proporcionan una base sólida para garantizar la seguridad.
+ Tema a resaltar que me gusto mucho el uso un poderoso framework de desarrollo web. la experiencia de trabajar con Angular debido a su estructura modular, su capacidad para crear aplicaciones web de una sola página (SPA)

@@ -2,11 +2,13 @@
 	
 	<div class="login-page">
     <div class="form">
-      <form  (ngSubmit)="sendLogin()" [formGroup]="formLogin"   class="login-form">
+      <form (ngSubmit)="sendLogin(formLogin.value.email, formLogin.value.password)" [formGroup]="formLogin"   class="login-form">
         <input formControlName="email" type="text" placeholder="Ingresa tu correo"/>
         <input formControlName="password"type="password" placeholder="Ingresa tu constraseña"/>
-        <button [disabled]="formLogin.valid"> Iniciar sesión</button>
-        <p class="message"> <a [routerLink]="['/registrar']">Regístrate aquí</a></p>
+        <button > Iniciar sesión</button>
+
+
+        <p class="message"> <a [routerLink]="['/registrarUsuario']">Regístrate aquí</a></p>
       </form>
     </div>
     <div *ngIf="errorSession">

@@ -1,22 +1,39 @@
-<div class="col-md-6 offset-md-3">
-  <h3 class="text-center">Registro de empleados</h3>
-  <form [formGroup]="formulario" (ngSubmit)="guardarUsuario()">
-    <div class="form-group">
-      <label for="nombre">Nombre :</label>
-      <input type="text" class="form-control"  formControlName="name">
+<form [formGroup]="formulario" class="form" (ngSubmit)="guardarUsuario()">
+  <div class="content mat-elevation-z8">
+    <div class="left-container">
+      <!-- Contenido del contenedor izquierdo -->
+      <div class="form-container">
+        <!-- Texto descriptivo -->
+        <p>Ingrese los detalles del usuario:</p>
+
+        <!-- Campo de nombre -->
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input formControlName="name" matInput placeholder="Ingrese su nombre">
+        </mat-form-field>
+
+        <!-- Campo de correo -->
+        <mat-form-field appearance="fill">
+          <mat-label>Correo</mat-label>
+          <input formControlName="email" matInput placeholder="Ingrese su correo electrónico">
+        </mat-form-field>
+
+        <!-- Campo de contraseña -->
+        <mat-form-field appearance="fill">
+          <mat-label>Contraseña</mat-label>
+          <input formControlName="password" matInput type="password" placeholder="Ingrese su contraseña">
+        </mat-form-field>
+
+  
+        <!-- Botón de registrar -->
+        <button mat-raised-button color="accent">Registrar</button>
+        <button mat-raised-button color="accent" (click)="clear" >Limpiar</button>
+        <button mat-raised-button color="accent" >Atrás</button>
+        
+      </div>
     </div>
-    <div class="form-group">
-      <label for="apellido">Apellido :</label>
-      <input type="text" class="form-control"  formControlName="email">
-    </div>
-    <div class="form-group">
-      <label for="telefono">Telefono :</label>
-      <input type="text" class="form-control"  formControlName="password">
-    </div>
-    
-    <button type="submit" class="btn btn bg-success">Guardar</button>
-  </form>
-</div>
+  </div>
+</form>
       
 
     

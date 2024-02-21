@@ -1,0 +1,52 @@
+.container {
+    max-width: 960px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrar el contenido horizontalmente */
+    padding: 20px; /* Espaciado interno */
+
+  }
+  
+  .card {
+    margin-bottom: 20px; /* Espaciado entre las tarjetas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease; /* Transición suave al pasar el ratón */
+    background-color: #ffd700; /* Color de fondo amarillo */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Efecto de levantamiento al pasar el ratón */
+  }
+  
+  .navbar-nav {
+    margin-bottom: 20px; /* Espaciado entre la barra de navegación y el contenido */
+  }
+  
+  .navbar-nav .nav-item {
+    display: inline-block; /* Mostrar los elementos de navegación en línea */
+  }
+  
+  .nav-link {
+    color: #333; /* Color del enlace */
+    text-decoration: none; /* Sin subrayado */
+    padding: 10px 15px; /* Espaciado interno */
+  }
+  
+  .nav-link:hover {
+    background-color: #f0f0f0; /* Cambio de color al pasar el ratón */
+  }
+  
+  .text-center {
+    text-align: center; /* Centrar el texto */
+  }
+  
+  .row {
+    display: flex; /* Utilizar flexbox para alinear las tarjetas en filas */
+    flex-wrap: wrap; /* Permitir que las filas se envuelvan en dispositivos pequeños */
+    margin-right: -15px; /* Corregir el espacio negativo a la derecha */
+    margin-left: -15px; /* Corregir el espacio negativo a la izquierda */
+  }
+  
+  .col-md-4 {
+    flex: 0 0 33.333%; /* Utilizar un tercio del ancho disponible */
+    max-width: 33.333%; /* Ancho máximo para dispositivos medianos */
+    padding: 0 15px; /* Espaciado interno */
+  }

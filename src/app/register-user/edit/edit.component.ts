@@ -24,11 +24,11 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
       id: ['', Validators.required],
-      nombre: ['', Validators.required],
-      apellido: ['', Validators.required],
-      telefono: ['', Validators.required],
+      name: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
       role: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]]
+      enable: ['', [Validators.required,]]
     });
 
     this.route.params.subscribe(params => {
@@ -39,10 +39,11 @@ export class EditComponent implements OnInit {
           // Asignar los valores al formulario
           this.formulario.patchValue({
             id: this.usuario.id,
-            nombre: this.usuario.name,
-     
+            name: this.usuario.name,
+            email: this.usuario.email,
+            password: this.usuario.password,
             role: this.usuario.role,
-            email: this.usuario.email
+            enable: this.usuario.enable
           });
         },
         error => {
@@ -54,7 +55,7 @@ export class EditComponent implements OnInit {
 
   onSubmit(): void {
     if (this.formulario.valid) {
-      const usuarioActualizado = this.formulario.value;
+      const usuarioActualizado = this.formulario.value; // Obtener los valores del formulario
       const userId = usuarioActualizado.id;
       this.usuarioService.actualizarUsuario(userId, usuarioActualizado).subscribe(
         data => {
@@ -68,4 +69,5 @@ export class EditComponent implements OnInit {
       );
     }
   }
+  
 }

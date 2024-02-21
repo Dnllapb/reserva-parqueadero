@@ -3,27 +3,24 @@
   <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="id">ID</label>
-      <input type="text" class="form-control" id="id" formControlName="id" required>
+      <input type="text" class="form-control"  formControlName="id" required>
     </div>
     <div class="form-group">
       <label for="nombre">Nombre:</label>
-      <input type="text" class="form-control" id="nombre" formControlName="nombre" required>
+      <input type="text" class="form-control"  formControlName="name" required>
     </div>
     <div class="form-group">
-      <label for="apellido">Apellido:</label>
-      <input type="text" class="form-control" id="apellido" formControlName="apellido" required>
+      <label for="apellido">correo</label>
+      <input type="email" class="form-control" formControlName="email" required>
     </div>
     <div class="form-group">
-      <label for="telefono">Teléfono:</label>
-      <input type="text" class="form-control" id="telefono" formControlName="telefono" required>
+      <label for="telefono">Contraseña:</label>
+      <input type="text" class="form-control"  formControlName="password" required>
     </div>
+
     <div class="form-group">
-      <label for="role">Rol:</label>
-      <input type="text" class="form-control" id="role" formControlName="role" required>
-    </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" formControlName="email" required>
+      <label for="email">Activo:</label>
+      <input type="text" class="form-control"  formControlName="enable" required>
     </div>
     <button type="submit" class="btn btn-success">Actualizar</button>
   </form>

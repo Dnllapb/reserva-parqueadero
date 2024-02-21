@@ -30,14 +30,13 @@ export class ListaComponent implements OnInit {
 }
 
 actualizarEmpleado(id:number){
-  this.router.navigate(['actualizar-empleado',id]);
+  this.router.navigate(['actualizar',id]);
 }
 
 eliminarUsuario(id: number): void {
   
   swal.fire({
     title: '¿Estás seguro?',
-    text: '¿Estás seguro de que deseas eliminar este usuario?',
     icon: 'warning',
     showCancelButton: true,
     confirmButtonText: 'Eliminar',
@@ -47,7 +46,7 @@ eliminarUsuario(id: number): void {
        this.usuarioService.eliminarUsuario(id).subscribe(
         () => {
           this.usuarios = this.usuarios.filter(usuario => usuario.id !== id);
-          swal.fire('Eliminado!', 'El usuario ha sido eliminado exitosamente.', 'success');
+          swal.fire('Eliminado!', 'success');
         },
         error => {
           console.error('Error al eliminar el usuario:', error);

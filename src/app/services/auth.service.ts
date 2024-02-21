@@ -18,8 +18,8 @@ export class AuthService {
     return this.http.post(`${this.URL}/auth/authenticate`,user,{responseType:'text'})
     .pipe(
       tap((responseOK:string) => {
-          this.cookies.set('token_service', responseOK,  1, '/')  
-          this.router.navigate(['dashboard/fincas/fincaEdit']);       
+          this.cookies.set('token', responseOK,  1, '/')  
+          this.router.navigate(['reservaNueva']);       
       })
       )
   }

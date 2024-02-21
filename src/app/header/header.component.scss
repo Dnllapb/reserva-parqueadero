@@ -1,0 +1,36 @@
+.header-toolbar {
+    height: 80px; 
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+  }
+  
+  .logo {
+    height: 50px; 
+  }
+  
+  .social-icons {
+    margin-left: auto; 
+  }
+  
+  .social-icon {
+    margin-left: 10px; 
+    color: white; 
+    font-size: 20px; 
+  }
+  
+  .logout-link {
+    margin-left: 20px; 
+    color: white; 
+    text-decoration: none;
+  }
+  
+  .logout-link:hover {
+    text-decoration: underline;
+  }

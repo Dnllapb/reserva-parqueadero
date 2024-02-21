@@ -8,28 +8,39 @@ import {
 import { Observable } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 
+
+//interceptar y manipular las solicitudes HTTP realizadas por una aplicación 
 @Injectable()
 export class InjectSessionInterceptor implements HttpInterceptor {
 
   constructor(private cookieService:CookieService) {}
 
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    try{
-      const token =this.cookieService.get('token')
-      let newRequest = request
-      newRequest = request.clone({
-        setHeaders:{
-            authorization:`Bearer ${token}`
-        }
-      }
-      )
-      return next.handle(request);
-    }catch(e){
-      console.log('Error Error Error  ',request)
-      return next.handle(request);
 
-    }
-   
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    // Lista de endpoints que no requieren token
+    const noAuthRequired = [
+      '/login',
+      'auth/register',
+ 
+      
+
+      // otros endpoints si es necesario
+    ];
   
+    const requiresAuth = !noAuthRequired.some(url => request.url.includes(url));
+  
+    if (requiresAuth) {
+      const token = this.cookieService.get('token');
+      if (token) {
+        request = request.clone({
+          setHeaders: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+      }
+    }
+  
+    return next.handle(request);
   }
 }
+
