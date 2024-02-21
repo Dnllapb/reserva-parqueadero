@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Router } from '@angular/router';
+import { Reserve } from './Reserve/Reserve';
+import { ReserveService } from '../services/reserve.service';
 
 @Component({
   selector: 'app-pages',
@@ -10,47 +12,38 @@ import { Router } from '@angular/router';
   styleUrls: ['./pages.component.scss']
 })
 export class PagesComponent implements OnInit {
-  @ViewChild('sidenav') sidenav!: MatSidenav;
-  fincaForm: any;
+  formulario: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
-    private observer: BreakpointObserver,
-    private cd: ChangeDetectorRef,
+    private formBuilder: FormBuilder,
+    private  reserveService: ReserveService,
     private router: Router
-  ) {
-    this.fincaForm = this.fb.group({
-      dateInit: ['', [Validators.required]],
-      dateFinal: ['', [Validators.required]],
-      typeVehicle: ['', [Validators.required]],
-      plate: ['', [Validators.required]],
-    });
-  }
+  ) {}
 
   ngOnInit(): void {
-  }
+    this.formulario = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
 
-  ngAfterViewInit() {
-    this.observer.observe(['(max-width: 800px)']).subscribe((resp: any) => {
-      if (resp.matches) {
-        this.sidenav.mode = 'over';
-        this.sidenav.close();
-      } else {
-        this.sidenav.mode = 'side';
-        this.sidenav.open();
-      }
     });
-    this.cd.detectChanges();
   }
 
-  logout() {
-    this.router.navigate(['/login']);
-  }
 
-  onSubmit() {
-    if (this.fincaForm.valid) {
-      // Lógica para manejar el envío del formulario (puedes enviar los datos al backend aquí)
-      console.log('Formulario enviado:', this.fincaForm.value);
+  guardarUsuario() {
+    if (this.formulario.valid) {
+      const usuario = this.formulario.value;
+      this.reserveService.newReserve(usuario).subscribe(
+        dato => {
+          console.log(dato);
+          //this.irAlaListaDeEmpleados();
+        },
+        error => console.log(error)
+      );
     }
+  }
+
+  irAlaListaDeEmpleados() {
+    this.router.navigate(['usuarios']);
   }
 }

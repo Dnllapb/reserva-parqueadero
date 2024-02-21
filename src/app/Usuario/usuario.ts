@@ -3,8 +3,8 @@ export class Usuario {
     name: string;
     email:string;
     password : string;
-    role:'USER';
-    enable:true;
+    enable:boolean;
+    role:string;
 
 
        

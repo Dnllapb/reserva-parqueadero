@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from 'src/app/services/auth.service';
 
+
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
@@ -18,6 +19,7 @@ export class AuthComponent implements OnInit{
 
 
     errorSession: boolean = false
+    errrSessionMessage:string ="";
     formLogin:FormGroup = new FormGroup({});
     ngOnInit(): void {
       this.formLogin = new FormGroup(
@@ -37,20 +39,16 @@ export class AuthComponent implements OnInit{
       
       
     }
-    sendLogin(): void {
-      const { email, password } = this.formLogin.value;
+    sendLogin(email: string, password: string): void {
       this.authService.sendCredential(email, password).subscribe({
-        next: (responseOk: any) => {
-          const { tokenSession } = responseOk;
-          this.cookie.set('token', tokenSession, 1, '/');
-        
-          console.log('Sesión iniciada correctamente', responseOk);
+        next: (response) => {
+          console.log('Inicio de sesión exitoso', response);
+          // Aquí podrías redirigir a la página de inicio de sesión exitosa o realizar otras acciones necesarias
         },
         error: (error) => {
-          this.errorSession = true;
-          console.error('Ocurrió un error en tu email y/o tu password', error);
+          console.error('Error al iniciar sesión', error);
+          // Aquí podrías manejar el error, por ejemplo, mostrar un mensaje de error al usuario
         }
       });
     }
-  
-}
+  }

@@ -1,55 +1,68 @@
-/* Estilos para la barra de navegación */
-nav {
-    background-color: #343a40; /* Fondo oscuro */
-    padding: 10px; /* Espaciado interno */
+body{
+  //background: linear-gradient(90deg, hwb(0 100% 0%), rgb(182, 182, 135));
+  color: black;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+
+}
+
+button {
+  background-color: #007bff; /* Color de fondo */
+  color: #ffffff; /* Color del texto */
+  border: none; /* Quita el borde */
+  padding: 8px 12px; /* Relleno interno */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+button:hover {
+  background-color: #0056b3; /* Color de fondo al pasar por encima */
+}
+
+/* Estilos para las tarjetas */
+.card-container {
+  display: flex;
+  flex-direction: column; 
+ 
+
+}
+
+.card {
+  flex: 0 1 calc(33.33% - 10px); /* 3 tarjetas por fila con espacio entre ellas */
+  margin-bottom: 20px;
+}
+.card {
+  flex-basis: calc(33.33% - 20px); /* Ancho máximo para tres tarjetas por fila */
+  margin-bottom: 20px;
+  margin-right: 20px; /* Espacio entre tarjetas */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 8px; /* Borde redondeado */
+  background-color: #ffd700; /* Color de fondo amarillo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Ajustar el margen derecho de la última tarjeta en cada fila */
+.card:nth-child(3n) {
+  margin-right: 0;
+}
+
+/* Ajustar el ancho de las tarjetas si hay menos de tres en una fila */
+@media (max-width: 992px) {
+  .card {
+      flex-basis: calc(50% - 20px); /* Ancho máximo para dos tarjetas por fila */
   }
-  
-  nav ul {
-    list-style-type: none; /* Quita los puntos de la lista */
-    margin: 0; /* Elimina el margen exterior */
-    padding: 0; /* Elimina el relleno */
+}
+
+@media (max-width: 576px) {
+  .card {
+      flex-basis: calc(100% - 20px); /* Ancho completo para una tarjeta por fila */
   }
-  
-  nav ul li {
-    display: inline; /* Hace que los elementos de la lista estén en línea */
-    margin-right: 10px; /* Espacio entre elementos */
-  }
-  
-  nav ul li a {
-    color: #ffffff; /* Color del texto */
-    text-decoration: none; /* Quita el subrayado del enlace */
-  }
-  
-  /* Estilos para la tabla */
-  table {
-    width: 100%; /* Ancho completo */
-    border-collapse: collapse; /* Colapsa los bordes de las celdas */
-  }
-  
-  th, td {
-    border: 1px solid #dddddd; /* Borde de celdas */
-    text-align: left; /* Alineación del texto */
-    padding: 8px; /* Relleno interno */
-  }
-  
-  th {
-    background-color: #343a40; /* Fondo oscuro para los encabezados */
-    color: #ffffff; /* Color del texto en los encabezados */
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2; /* Fondo alternado para filas pares */
-  }
-  
-  /* Estilos para los botones */
-  button {
-    background-color: #007bff; /* Color de fondo */
-    color: #ffffff; /* Color del texto */
-    border: none; /* Quita el borde */
-    padding: 8px 12px; /* Relleno interno */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-  }
-  
-  button:hover {
-    background-color: #0056b3; /* Color de fondo al pasar por encima */
-  }
+}
+.filas {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-container {
+  flex: 0 0 calc(33.33% - 10px); 
+  margin: 5px;}
